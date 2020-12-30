@@ -1,11 +1,5 @@
 <script>
-  import { link } from "svelte-routing";
-
-  import Logo from "../components/Logo.svelte"
-
-  // export let title = "Ricettario";
-  export let subtitle = "di Giorgia e Umberto"
-
+  import Logo from "../components/Logo.svelte";
 </script>
 
 <div>
@@ -25,7 +19,7 @@
         <div class="items-center flex flex-wrap">
           <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
             <Logo textClass="text-black dark:text-gray-200"/>
-            <h3 class="text-gray-800 dark:text-gray-300 float-right text-2xl">{subtitle}</h3> 
+            <h3 class="text-gray-800 dark:text-gray-300 float-right text-2xl">di Giorgia e Umberto</h3>
           </div>
         </div>
       </div>
@@ -51,9 +45,9 @@
         <div class="flex flex-wrap">
           <div class="lg:pt-12 pt-6 w-full xl:w-8/12 px-4 text-center mx-auto">
             <div class="relative flex flex-col min-w-0 break-words bg-gray-200 dark:bg-gray-700 w-full mb-8 shadow-lg rounded-lg">
-              <input 
+              <input
                 class="px-5 py-3 text-2xl
-                  text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-700 
+                  text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-700
                     bg-transparent "
                 id="search"
                 type="search"
@@ -70,6 +64,6 @@
     <!-- Section: Seasonal -->
 
     <!-- Footer -->
-    
+
   </main>
 </div>
