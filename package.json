@@ -43,6 +43,7 @@
     "tailwindcss": "^2.0.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "sirv-cli": "^1.0.0",
     "svelte-awesome": "^2.3.0",
     "svelte-routing": "^1.4.2"
