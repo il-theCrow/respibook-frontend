@@ -1,12 +1,31 @@
-FROM node:15.4-alpine AS builder
+# Build app
+FROM node:15.5-alpine AS builder
+
+WORKDIR /app
+COPY . .
+
+RUN yarn
+RUN yarn build
+
+# Production dependencies
+FROM node:15.5-alpine AS dependencies
 
 WORKDIR /app
 
 COPY package.json ./
-COPY package-lock.json ./
-RUN npm install
-COPY . ./
-RUN npm run build
+COPY yarn.lock ./
+RUN yarn install --prod
 
-FROM nginx:stable-alpine
-COPY --from=builder /app/public /usr/share/nginx/html
+COPY --from=builder /app/static static
+COPY --from=builder /app/__sapper__ __sapper__
+
+# Production image
+FROM node:15.5-slim
+
+WORKDIR /app
+
+COPY --from=dependencies /app .
+
+EXPOSE 80
+ENV PORT 80
+CMD ["node", "__sapper__/build"]
