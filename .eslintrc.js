@@ -22,7 +22,7 @@ module.exports = {
     }
   ],
   "ignorePatterns": [
-    "public/build/"
+    "__sapper__"
   ],
   "rules": {
     "indent": [

@@ -104,7 +104,7 @@ dist
 .tern-port
 
 # Build
-public/build
+__sapper__/
 
 #Editors
 .vscode/
